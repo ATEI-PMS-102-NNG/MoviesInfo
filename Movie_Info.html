@@ -12,7 +12,7 @@
 
 /* Μορφοποιήσεις για τα search box και το button του */
 input[type=text], select {
-    width: 80%;
+    width: 40%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -20,7 +20,10 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
+input[type=text]:focus {
+    width: 80%;
+}
+	
 input[type=submit] {
     width: 15%;
     background-color: #4CAF50;
