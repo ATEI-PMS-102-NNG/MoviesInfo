@@ -107,6 +107,25 @@
 
         }
 
+        //Paradeigma xmlHTTP Request apo to documentation tou TMDB API
+        function f1(){
+            var data = "{}";
+
+            var xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === this.DONE) {
+                    console.log(this.responseText);
+                }
+            });
+
+            xhr.open("GET", "https://api.themoviedb.org/3/search/movie?api_key=b5456db86ace1556b60313e04972fc9f&query=Thor", true);
+
+            xhr.send(data);
+        }
+
+
     </script>
 
 
@@ -132,7 +151,7 @@
     <form>
         <input type="text" id="search1" name="search" autocomplete="off" placeholder="Start Searching!">
         <input type="button" id="submit1" value="Submit" onclick="movieSearch()">
-        <input type="button" id="submit2" value="Submit2">
+        <input type="button" id="submit2" value="Submit2" onclick="f1()">
     </form>
 </div><br>
 
