@@ -107,41 +107,6 @@
 
         }
 
-        //de douleuei
-        /////////////////////////////////////////////////////////////////////////////////////////
-        $(function() {
-            var url = "https://api.themoviedb.org/3/search/movie?api_key=b5456db86ace1556b60313e04972fc9f&query=";
-            //var input = document.getElementById("search1").value;
-            //var movieName;
-
-            $('submit2').click(function() {
-                var input = $('#movie').val(),
-                    movieName = encodeURI(input);
-                $.ajax({
-                    url: url + input,
-                    dataType: 'json',
-                    success: function(data) {
-                        console.log(data);
-                    }
-                });
-            });
-        });
-
-
-//de douleuei
-//////////////////////////////////////////////////////////////////////////////////////////////////
-        $.getJSON( "https://api.themoviedb.org/3/search/movie?api_key=b5456db86ace1556b60313e04972fc9f&query=Thor", function( data ) {
-            var items = [];
-            $.each( data, function( key, val ) {
-                items.push( "<li id='" + key + "'>" + val + "</li>" );
-            });
-
-            $( "<ul/>", {
-                "class": "my-new-list",
-                html: items.join( "" )
-            }).appendTo( "body" );
-        });
-
     </script>
 
 
