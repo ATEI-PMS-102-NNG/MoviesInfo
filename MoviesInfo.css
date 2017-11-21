@@ -5,7 +5,7 @@
 
 /* Μορφοποιήσεις για τα search box και το button του */
 input[type=text], select {
-    width: 40%;
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -13,9 +13,7 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-input[type=text]:focus {
-    width: 80%;
-}
+
 
 input[type=submit] {
     width: 15%;
@@ -74,6 +72,10 @@ div.FrontPage{
     border: 3px solid #73AD21;
     padding: 10px;
     position: center;
+}
+
+tr.collapse{
+    display: none;
 }
 
 footer{
