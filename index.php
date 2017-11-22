@@ -6,14 +6,14 @@
     <link rel="stylesheet" type="text/css" href="MoviesInfo.css">
     <script src="jquery-3.2.1.js"></script>
 
-    <script>
+    <script type="text/javascript">
         //Auto douleuei
         //document.getElementById("demo").innerHTML = movieSearch(userInput);
         function movieSearch(){
-            var userInput = document.getElementById("search1").value;
-            var a = document.getElementById("myID");
-            a.href += userInput;
-            document.getElementById("submit1").onclick = self.location=a.href;
+            var userInput = document.getElementById("search1").value; //παίρνει το κείμενο που πληκτρολόγησε ο χρήστης
+            var urlObj = {href:"https://api.themoviedb.org/3/search/movie?api_key=b5456db86ace1556b60313e04972fc9f&query="}; //το url από το API που θα γίνει η κλήση (χωρίς το κείμενο του χρήστη)
+            urlObj.href += userInput; //πρόσθεση κειμένου χρήστη στο url για αναζήτηση ταινίας
+            document.getElementById("submit1").onclick = self.location= urlObj.href; //με το κλικ στο submit1 γίνεται η κλήση στο API με το ολοκληρωμένο url
 
         }
     </script>
@@ -31,23 +31,18 @@
     <h1>Movie Info</h1><br>
 </div>
 
-<p>Learn all about yout favourite movies!</p><br>
+<p>Learn all about your favourite movies!</p><br>
 
 <!-- Εδώ βρίσκεται το search box και το button για την εκκίνηση αναζήτησης -->
 <div class = "TheSearch">
     <form>
         <input type="text" id="search1" name="search" autocomplete="off" placeholder="Start Searching!">
-        <input type="button" id="submit1" value="Submit" onclick="movieSearch()">
-        <input type="button" id="submit2" value="Submit2">
+        <input type="button" id="submit1" value="Search" onclick="movieSearch()">
     </form>
 </div><br>
 
 <div class = "FrontPage">
     <table>
-
-        <tr class="collapse"><!-- Αυτο το εχουμε κανει να μη φαινεται -->
-            <td><a id="myID" href="https://api.themoviedb.org/3/search/movie?api_key=b5456db86ace1556b60313e04972fc9f&query=">The Search link</a></td>
-        </tr>
         <tr>
             <td><a href="https://api.themoviedb.org/3/movie/popular?api_key=b5456db86ace1556b60313e04972fc9f&language=en-US&page=1">popular movies!</a></td>
         </tr>
