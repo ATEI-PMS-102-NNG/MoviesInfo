@@ -6,11 +6,10 @@
     <link rel="stylesheet" type="text/css" href="MoviesInfo.css">
     <script src="jquery-3.2.1.js"></script>
 
-    <script > //type="text/javascript"
+    <script type="text/javascript">
         //Auto douleuei
         //document.getElementById("demo").innerHTML = movieSearch(userInput);
-        function movieSearch(){
-            var userInput = document.getElementById("search1").value; //παίρνει το κείμενο που πληκτρολόγησε ο χρήστης
+        function movieSearch(userInput){
             var urlObj = {href:"https://api.themoviedb.org/3/search/movie?api_key=b5456db86ace1556b60313e04972fc9f&query="}; //το url από το API που θα γίνει η κλήση (χωρίς το κείμενο του χρήστη)
             urlObj.href += userInput; //πρόσθεση κειμένου χρήστη στο url για αναζήτηση ταινίας
             document.getElementById("submit1").onclick = self.location= urlObj.href; //με το κλικ στο submit1 γίνεται η κλήση στο API με το ολοκληρωμένο url
@@ -27,7 +26,7 @@
         //script που τρέχει όταν πατηθεί το enter (κάνει search)
         window.addEventListener('keyup', function (e) {
             if (e.keyCode === 13) {
-                movieSearch();
+                movieSearch(document.getElementById("search1").value);
             }
         });
     </script>
@@ -50,7 +49,7 @@
 <div class = "TheSearch">
     <form>
         <input type="text" id="search1" name="search" autocomplete="off" placeholder="Start Searching!">
-        <input type="button" id="submit1" value="Search" onclick="movieSearch()">
+        <input type="button" id="submit1" value="Search" onclick="movieSearch(document.getElementById('search1').value)">
     </form>
 </div><br>
 
