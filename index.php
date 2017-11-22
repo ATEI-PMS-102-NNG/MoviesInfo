@@ -18,6 +18,14 @@
         }
     </script>
 
+    <script>
+        //script που τρέχει όταν πατηθεί το enter (κάνει search)
+        window.addEventListener('keyup', function (e) {
+            if (e.keyCode === 13) {
+                movieSearch();
+            }
+        });
+    </script>
 </head>
 
 <body>
