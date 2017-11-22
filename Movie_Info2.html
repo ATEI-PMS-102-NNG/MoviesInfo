@@ -103,9 +103,15 @@
             var userInput = document.getElementById("search1").value;
             var a = document.getElementById("myID");
             a.href += userInput;
-            document.getElementById("submit1").onclick = self.location=a.href;
+            document.getElementById("submit1").onclick = window.open(a.href); //self.location=
+
+            //peirama me kwdiko sygkekrimenhs tainias
+            var str = "Movie details and videos";
+            var result = str.link("https://api.themoviedb.org/3/movie/10195?api_key=b5456db86ace1556b60313e04972fc9f&append_to_response=videos");
+            document.getElementById("demo").innerHTML = result;
 
         }
+
 
         //Paradeigma xmlHTTP Request apo to documentation tou TMDB API
         function f1(){
@@ -134,6 +140,9 @@
 
 
 <body>
+
+
+
 
 
 <!-- Εδώ βρίσκονται ο τίτλος και το logo που πατώντας το μας πηγαινει στο site τους -->
@@ -168,6 +177,7 @@
     </table>
 </div>
 
+<p id="demo"></p>
 
 <footer></footer>
 
