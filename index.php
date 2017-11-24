@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>MoviesInfo</title>
+    <title>MoviesInfo....</title>
     <link rel="stylesheet" type="text/css" href="MoviesInfo.css">
     <script src="jquery-3.2.1.js"></script>
 
