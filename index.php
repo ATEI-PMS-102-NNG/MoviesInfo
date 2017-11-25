@@ -2,6 +2,9 @@
 <html>
 
 <head>
+
+
+
     <title>MoviesInfo</title>
     <link rel="stylesheet" type="text/css" href="MoviesInfo.css">
     <script src="jquery-3.2.1.js"></script>
@@ -43,7 +46,7 @@
     <h1>Movie Info</h1><br>
 </div>
 
-<p>Learn all about your favourite movies!</p><br>
+<p><h2>Learn all about your favourite movies!</h2></p><br>
 
 <!-- Εδώ βρίσκεται το search box και το button για την εκκίνηση αναζήτησης -->
 <div class = "TheSearch">
