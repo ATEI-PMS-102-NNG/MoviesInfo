@@ -78,6 +78,14 @@ tr.collapse{
     display: none;
 }
 
+div.display{
+    text-align: center;
+    color: darkblue;
+    font-size: 350%;
+
+}
+
+
 footer{
     background-color: #003366;
 }
