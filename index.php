@@ -10,8 +10,10 @@
     <script>
 
 
-        //Paradeigma xmlHTTP Request apo to documentation tou TMDB API
+        //jquery Request apo to documentation tou TMDB API
         function f1(){
+
+            //document.getElementById(results).style.visibility = "visible";
 
             var userInput = document.getElementById("search1").value;
             var settings = {
@@ -27,7 +29,15 @@
 
             $.ajax(settings).done(function (response) {
                 console.log(response);
-                document.getElementById("results").innerHTML = response.results[0].original_title;
+                var x =   document.getElementById("results")
+
+                document.getElementById("movieTitle").innerHTML = response.results[0].original_title;
+
+                var y = response.results[0].poster_path;
+                document.getElementById("moviePoster").src += y;
+
+                document.getElementById("movieOverview").innerHTML =  response.results[0].overview;
+               //document.getElementById("results").innerHTML = response.results[0].overview;
             });
 
 
@@ -66,26 +76,14 @@
     </form>
 </div><br>
 
-<div class = "FrontPage">
-    <table>
 
-        <tr class="collapse"><!-- Αυτο το εχουμε κανει να μη φαινεται -->
-            <td><a id="myID" href="https://api.themoviedb.org/3/search/movie?api_key=b5456db86ace1556b60313e04972fc9f&query=">The Search link</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://api.themoviedb.org/3/movie/popular?api_key=b5456db86ace1556b60313e04972fc9f&language=en-US&page=1">popular movies!</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://api.themoviedb.org/3/movie/157336?api_key=b5456db86ace1556b60313e04972fc9f&append_to_response=videos,images"> Videos and Images... </a></td>
-
-        </tr>
-
-    </table>
-</div>
 
 <br>
-<!-- Edw emfanizetai o titlos tainias -->
+<!-- Edw emfanizontai stoixeia tainias -->
 <div class="display" id="results">
+    <p id="movieTitle"></p><br>
+    <img id="moviePoster" src="https://image.tmdb.org/t/p/w500/"><br>
+    <p id="movieOverview"></p>
 
 </div>
 
