@@ -28,16 +28,23 @@
 
 
             $.ajax(settings).done(function (response) {
-                console.log(response);
-                var x =   document.getElementById("results")
 
-                document.getElementById("movieTitle").innerHTML = response.results[0].original_title;
 
-                var y = response.results[0].poster_path;
-                document.getElementById("moviePoster").src += y;
+                var i;
+                var y;
 
-                document.getElementById("movieOverview").innerHTML =  response.results[0].overview;
-               //document.getElementById("results").innerHTML = response.results[0].overview;
+                for(i=0; i<response.results.length; i++){ //emfanizei mono to teleutaio stoixeio
+                    console.log(response);
+                    document.getElementById("movieTitle").innerHTML = response.results[i].original_title;
+
+                    y = response.results[i].poster_path;
+                    document.getElementById("moviePoster").src += y;
+
+                    document.getElementById("movieOverview").innerHTML =  response.results[i].overview;
+
+                }
+
+
             });
 
 
@@ -81,6 +88,7 @@
 <br>
 <!-- Edw emfanizontai stoixeia tainias -->
 <div class="display" id="results">
+
     <p id="movieTitle"></p><br>
     <img id="moviePoster" src="https://image.tmdb.org/t/p/w500/"><br>
     <p id="movieOverview"></p>
