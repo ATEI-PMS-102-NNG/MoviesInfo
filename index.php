@@ -29,21 +29,30 @@
 
             $.ajax(settings).done(function (response) {
 
-
+                console.log(response);
                 var i;
-                var y;
+                var obj1, obj2, obj3;
+                var myResult = "";
 
-                for(i=0; i<response.results.length; i++){ //emfanizei mono to teleutaio stoixeio
-                    console.log(response);
-                    document.getElementById("movieTitle").innerHTML = response.results[i].original_title;
+                for(i=0; i<response.results.length; i++){
 
-                    y = response.results[i].poster_path;
-                    document.getElementById("moviePoster").src += y;
+                   // myResult += '<div class="div-container">';
+                   // myResult += '<p class="p-title"> movie title: ' + response.results[i].original_title + '</p>';
+                   // myResult += '<img class="poster" src="https://image.tmdb.org/t/p/w500/">' + response.results[i].poster_path;
+                   // myResult += '<p class="p-overview">movie overview: ' +  response.results[i].overview + '</p>';
+                   // myResult += '</div>';
 
-                    document.getElementById("movieOverview").innerHTML =  response.results[i].overview;
+                   obj1 += response.results[i].original_title + "<br>";
+
+                   obj2 += response.results[i].poster_path + "<br>";
+
+                  obj3 +=  response.results[i].overview + "<br>";
 
                 }
 
+                document.getElementById("movieTitle").innerHTML = obj1;
+                document.getElementById("moviePoster").src += obj2;
+                document.getElementById("movieOverview").innerHTML = obj3;
 
             });
 
@@ -89,9 +98,11 @@
 <!-- Edw emfanizontai stoixeia tainias -->
 <div class="display" id="results">
 
-    <p id="movieTitle"></p><br>
-    <img id="moviePoster" src="https://image.tmdb.org/t/p/w500/"><br>
-    <p id="movieOverview"></p>
+    <p class="p-title" id="movieTitle"></p><br>
+
+    <img class="poster" id="moviePoster" ><br> <!--src="https://image.tmdb.org/t/p/w500/"-->
+
+    <p class="p-overview" id="movieOverview"></p>
 
 </div>
 
