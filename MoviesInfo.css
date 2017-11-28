@@ -79,6 +79,24 @@ div.display{
 
 }
 
+div.c1{
+     margin: auto;
+     width: 90%;
+     height: 70%;
+     padding: 10px;
+ }
+div.c2{
+    margin: auto;
+    width: 90%;
+    height: 70%;
+    padding: 10px;
+}
+div.c3{
+    margin: auto;
+    width: 90%;
+    height: 70%;
+    padding: 10px;
+}
 
 footer{
     background-color: #003366;

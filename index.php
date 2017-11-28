@@ -95,16 +95,26 @@
 
 
 <br>
+
 <!-- Edw emfanizontai stoixeia tainias -->
-<div class="display" id="results">
+<div  id="results" class="display">
 
-    <p class="p-title" id="movieTitle"></p><br>
-
-    <img class="poster" id="moviePoster" ><br> <!--src="https://image.tmdb.org/t/p/w500/"-->
-
-    <p class="p-overview" id="movieOverview"></p>
+    <div class="c1">
+        <p class="p-title" id="movieTitle"></p><br>
+    </div><br>
+    <div class="c2">
+        <img class="poster" id="moviePoster" ><br> <!--src="https://image.tmdb.org/t/p/w500/"-->
+    </div><br>
+    <div class="c3">
+        <p class="p-overview" id="movieOverview"></p>
+    </div>
 
 </div>
+
+
+
+
+
 
 <footer></footer>
 
