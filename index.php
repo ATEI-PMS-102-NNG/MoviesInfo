@@ -12,7 +12,6 @@
 
         //jquery Request apo to documentation tou TMDB API
         function f1(){
-
             var userInput = document.getElementById("search1").value;
             var settings = {
                 "async": true,
