@@ -8,6 +8,7 @@
     <script src="jquery-3.2.1.js"></script>
     <script src="movieInfo_Functions.js"></script>
 
+
 </head>
 
 
@@ -21,15 +22,7 @@
     <h1>Movie Info</h1><br>
 </div>
 
-<p>Learn all about yout favourite movies!</p><br>
 
-<!-- Εδώ βρίσκεται το search box και το button για την εκκίνηση αναζήτησης -->
-<div class = "TheSearch">
-    <form>
-        <input type="text" id="search1" name="search" autocomplete="off" placeholder="Start Searching!">
-        <input type="button" id="submit" value="Submit" onclick="f1()">
-    </form>
-</div><br>
 
 <footer></footer>
 
