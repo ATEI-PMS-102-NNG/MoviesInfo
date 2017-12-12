@@ -1,10 +1,11 @@
 //All functions
 
 //enter key search
-function enterSearch() {
-    if (event.keyCode == 13) {
-        event.preventDefault();
-        document.getElementById('submit').click()
+function enterSearch(e) {
+    var code = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0; //for all browsers
+    if(code===13){
+        e.preventDefault(); //not refresh the page
+        document.getElementById('submit').click() //search using ajax below
     }
 }
 //jquery Request apo to documentation tou TMDB API

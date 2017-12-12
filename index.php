@@ -27,7 +27,7 @@
 <!-- Εδώ βρίσκεται το search box και το button για την εκκίνηση αναζήτησης -->
 <div class = "TheSearch">
     <form>
-        <input type="text" id="search1" name="search" autocomplete="off" placeholder="Start Searching!" onkeypress="enterSearch()">
+        <input type="text" id="search1" name="search" autocomplete="off" placeholder="Start Searching!" onkeydown="enterSearch(event)">
         <input type="button" id="submit" value="Submit" onclick="f1()">
     </form>
 </div><br>
