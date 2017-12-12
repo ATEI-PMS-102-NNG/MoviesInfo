@@ -9,12 +9,14 @@ function enterSearch() {
 }
 //jquery Request apo to documentation tou TMDB API
 function f1(){
+    document.getElementById("results").innerHTML = ""; //clean previous search
 
-    var userInput = document.getElementById("search1").value;
+    var userInput = document.getElementById("search1").value; //search text
+    //build ajax settings
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://api.themoviedb.org/3/search/movie?api_key=b5456db86ace1556b60313e04972fc9f&query="+userInput,
+        "url": "https://api.themoviedb.org/3/search/movie?api_key=b5456db86ace1556b60313e04972fc9f&query="+userInput, //query + search text
         "method": "GET",
         "headers": {},
         "data": "{}"
@@ -39,7 +41,8 @@ function f1(){
             movieWrapper.style.margin = "auto";
             movieWrapper.style.width = "70%";
             movieWrapper.style.border = "3px solid #73AD21";
-            document.body.appendChild(movieWrapper);
+            document.getElementById("results").appendChild(movieWrapper);
+            //!!! document.body.
 
             //creating a <p> for the title and appending it into the DIV
             obj1 = response.results[i].original_title; //getting the original_title from table results that is in the returned Json data

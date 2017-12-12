@@ -32,6 +32,10 @@
     </form>
 </div><br>
 
+<div id="results">
+
+</div>
+
 <footer></footer>
 
 </body>
