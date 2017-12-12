@@ -1,5 +1,12 @@
+//All functions
 
-
+//enter key search
+function enterSearch() {
+    if (event.keyCode == 13) {
+        event.preventDefault();
+        document.getElementById('submit').click()
+    }
+}
 //jquery Request apo to documentation tou TMDB API
 function f1(){
 
