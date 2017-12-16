@@ -28,12 +28,15 @@
 <div class = "TheSearch">
     <form>
         <input type="text" id="search1" name="search" autocomplete="off" placeholder="Start Searching!" onkeydown="enterSearch(event)">
-        <input type="button" id="submit" value="Submit" onclick="f1()">
+        <input type="button" id="submit" value="Submit" onclick="f1(3)">
     </form>
 </div><br>
 
 <div id="results">
 
+</div>
+<div class = "more">
+    <input type="button" id="showMoreButton" value="Show More Movies!" style = "display: none" onclick="f1(100)">
 </div>
 
 <footer></footer>
