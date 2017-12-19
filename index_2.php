@@ -12,7 +12,7 @@
 </head>
 
 
-<body>
+<body onload="popularMovies()">
 
 <!-- Εδώ βρίσκονται ο τίτλος και το logo που πατώντας το μας πηγαινει στο site τους -->
 <div class = "TheHeader">
@@ -22,7 +22,9 @@
     <h1>Movie Info</h1><br>
 </div>
 
+<div id="popularResults">
 
+</div>
 
 <footer></footer>
 
