@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+  <head>
     <title>MoviesInfo</title>
     <link rel="stylesheet" type="text/css" href="MoviesInfo.css">
     <meta charset="utf-8"/>
     <script src="jquery-3.2.1.js"></script>
     <script src="movieInfo_Functions.js"></script>
 
-
-</head>
+  </head>
 
 
 <body>
@@ -32,12 +31,19 @@
     </form>
 </div><br>
 
+<!-- Εδώ βρίσκεται το button για την εμφάνιση των popular movies -->
+<div class = "TheSearch">
+    <p>See all the recent and most popular movies!</p>
+    <input type="button" id="showPopular" value="Show Popular Movies!" onclick="redirectToIndex2()">
+</div>
+
 <div id="results">
 
 </div>
-<div class = "more">
-    <input type="button" id="showMoreButton" value="Show More Movies!" style = "display: none" onclick="f1(100)">
-</div>
+
+
+<input type="button" id="showMoreButton" value="Show More Movies!" style = "display: none" onclick="f1(100)">
+
 
 <footer></footer>
 
