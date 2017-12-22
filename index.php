@@ -42,7 +42,7 @@
 </div>
 
 
-<input type="button" id="showMoreButton" value="Show More Movies!" style = "display: none" onclick="f1(100)">
+<input type="button" id="showMoreButton" value="Show More Movies!" style = "display:none" onclick="f1(100)">
 
 
 <footer></footer>
