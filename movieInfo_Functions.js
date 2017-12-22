@@ -9,7 +9,7 @@ function enterSearch(e) {
     }
     }
 //jquery Request apo to documentation tou TMDB API
-function f1(){
+function f1(x){
     document.getElementById("results").innerHTML = ""; //clean previous search
 
     var userInput = document.getElementById("search1").value; //search text
@@ -32,7 +32,7 @@ function f1(){
         var myResult1, myResult2, myResult3="";
         var movieWrapper;
 
-        for(i=0; i<10; i++) {
+        for(i=0; i<x; i++) {
             //Making a DIV dynamically. In this DIV, the title, poster and overview of a movie is being displayed.
             movieWrapper = document.createElement("DIV");
             movieWrapper.id = "displayDiv";
@@ -64,6 +64,8 @@ function f1(){
             myResult3.innerHTML = obj3;
             document.getElementById("displayDiv").appendChild(myResult3);
         }
+
+        document.getElementById("showMoreButton").style.display = "block";
     });
 }
 
