@@ -43,13 +43,16 @@ function f1(x){
             movieWrapper.style.width = "70%";
             movieWrapper.style.border = "3px solid #73AD21";
             document.getElementById("results").appendChild(movieWrapper);
-            //!!! document.body.
 
-            //creating a <p> for the title and appending it into the DIV
+            //creating an <a> for the title and appending it into the DIV
             obj1 = response.results[i].original_title; //getting the original_title from table results that is in the returned Json data
-            myResult1 = document.createElement("P");
-            myResult1.innerHTML = obj1;
+            myResult1 = document.createElement("A");
+            myResult1.innerHTML = obj1; //insert movie title
+            myResult1.href = "https://www.google.gr"; //active link for full overview of movie !!!For test I use google!!!
             document.getElementById("displayDiv").appendChild(myResult1);
+
+            document.getElementById("displayDiv").innerHTML += "<br>"; //break lines between movie title and image
+            document.getElementById("displayDiv").innerHTML += "<br>";
 
             //creating an <img> for the poster and appending it into the DIV
             obj2 = response.results[i].poster_path; //getting the poster_path from table results that is in the returned Json data
