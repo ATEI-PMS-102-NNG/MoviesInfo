@@ -6,9 +6,6 @@
     <script src="jquery-3.2.1.js"></script>
     <title>Movie Info</title>
 
-
-
-
     <style type="text/css">
         #page{
             width:600px;
@@ -25,7 +22,6 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-
 
         input[type=submit] {
             width: 15%;
@@ -48,7 +44,6 @@
             color: #00cc66;
             font-size: 350%;
         }
-
 
         img{
             width:100px;
@@ -103,12 +98,8 @@
 
     </style>
 
-
-
     <script>
-
-
-        //Paradeigma xmlHTTP Request apo to documentation tou TMDB API
+       //Paradeigma xmlHTTP Request apo to documentation tou TMDB API
         function f1(){
 
             var userInput = document.getElementById("search1").value;
@@ -121,25 +112,15 @@
                 "data": "{}"
             };
 
-
-
             $.ajax(settings).done(function (response) {
                 console.log(response);
                 document.getElementById("results").innerHTML = response.results[0].original_title;
-            });
-
+               });
 
         }
 
-
-
     </script>
-
-
 </head>
-
-
-
 <body>
 
 
