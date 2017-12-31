@@ -2,11 +2,11 @@
 <html>
 
   <head>
-    <title>MoviesInfo</title>
-    <link rel="stylesheet" type="text/css" href="MoviesInfo.css">
-    <meta charset="utf-8"/>
-    <script src="jquery-3.2.1.js"></script>
-    <script src="movieInfo_Functions.js"></script>
+      <title>MoviesInfo</title>
+      <link rel="stylesheet" type="text/css" href="MoviesInfo.css">
+      <meta charset="utf-8"/>
+      <script src="jquery-3.2.1.js"></script>
+      <script src="movieInfo_Functions.js"></script>
 
   </head>
 
