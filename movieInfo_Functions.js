@@ -81,7 +81,7 @@ function f2(id){
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://api.themoviedb.org/3/movie/" + id + "?api_key=b5456db86ace1556b60313e04972fc9f", //query with specific id
+        "url": "https://api.themoviedb.org/3/movie/" + id + "?api_key=b5456db86ace1556b60313e04972fc9f", //query with specific id
         "method": "GET",
         "headers": {},
         "data": "{}"
