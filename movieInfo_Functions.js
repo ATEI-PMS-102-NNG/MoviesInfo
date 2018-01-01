@@ -54,7 +54,7 @@ function f1(x){
             document.getElementById("displayDiv").appendChild(myResult1);
             document.getElementById("displayDiv").innerHTML += "<br>"; //break lines between movie title and image
 
-            //creating an <img> for the poster and appending it into the DIV
+            //creating an <img> for the poster and appending it into the DIV.
             obj2 = response.results[i].poster_path; //getting the poster_path from table results that is in the returned Json data
             myResult2 = document.createElement("IMG");
             myResult2.src = "https://image.tmdb.org/t/p/w500/";
