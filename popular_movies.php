@@ -1,6 +1,7 @@
 
 <?php include ('get_popular.php');?>
 /* Προβολή στην αρχική μας σελίδα οι δημοφιλέστερες ταινίες της βάσης The Movie Database (TMDb) */
+
 function popularMovies(){
 
 var settings = {
