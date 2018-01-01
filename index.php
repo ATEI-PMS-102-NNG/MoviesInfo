@@ -36,7 +36,7 @@
     <p>See all the recent and most popular movies!</p>
     <input type="button" id="showPopular" value="Show Popular Movies!" onclick="redirectToIndex2()">
 </div>
-
+<br>
 <div id="results">
 
 </div>

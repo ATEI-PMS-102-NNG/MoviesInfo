@@ -51,6 +51,7 @@ function f1(x){
             myResult1 = document.createElement("A");
             myResult1.innerHTML = obj1; //insert movie title
             myResult1.href = "show_movie.php?id=" + id; //active link for full overview of movie --> send id of movie to page show_movie
+            myResult1.style.fontSize = "36px";
             document.getElementById("displayDiv").appendChild(myResult1);
 
             document.getElementById("displayDiv").innerHTML += "<br>"; //break lines between movie title and image
@@ -61,6 +62,8 @@ function f1(x){
             myResult2 = document.createElement("IMG");
             myResult2.src = "https://image.tmdb.org/t/p/w500/";
             myResult2.src += obj2;
+            myResult2.style.height = "25%";
+            myResult2.style.width = "25%";
             document.getElementById("displayDiv").appendChild(myResult2);
 
             //creating a <p> for the overview and appending it into the DIV
@@ -110,6 +113,7 @@ function f2(id){
         obj1 = response.original_title; //getting the original_title in the returned Json data
         myResult1 = document.createElement("P");
         myResult1.innerHTML = obj1; //insert movie title
+        myResult1.style.fontSize = "36px";
         document.getElementById("displayDiv").appendChild(myResult1);
 
         //creating an <img> for the poster and appending it into the DIV
@@ -117,6 +121,8 @@ function f2(id){
         myResult2 = document.createElement("IMG");
         myResult2.src = "https://image.tmdb.org/t/p/w500/";
         myResult2.src += obj2;
+        myResult2.style.height = "25%";
+        myResult2.style.width = "25%";
         document.getElementById("displayDiv").appendChild(myResult2);
 
         //creating a <p> for the overview and appending it into the DIV
@@ -162,6 +168,7 @@ function popularMovies(){
             obj1 = response.results[i].original_title; //getting the original_title from table results that is in the returned Json data
             myPopular1 = document.createElement("P");
             myPopular1.innerHTML = obj1;
+            myPopular1.style.fontSize = "36px";
             document.getElementById("displayDiv").appendChild(myPopular1);
 
             //creating an <img> for the poster and appending it into the DIV
@@ -169,6 +176,8 @@ function popularMovies(){
             myPopular2 = document.createElement("IMG");
             myPopular2.src = "https://image.tmdb.org/t/p/w500/";
             myPopular2.src += obj2;
+            myPopular2.style.height = "25%";
+            myPopular2.style.width = "25%";
             document.getElementById("displayDiv").appendChild(myPopular2);
 
             //creating a <p> for the overview and appending it into the DIV
