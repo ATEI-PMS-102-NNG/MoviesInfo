@@ -187,6 +187,8 @@ function redirectToIndex2(){
 }
 
 
-
+function gotToHomePage(){
+    window.location = "index.php";
+}
 
 

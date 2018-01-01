@@ -20,6 +20,7 @@
         <img src="https://www.themoviedb.org/assets/static_cache/02a9430b88975cae16fcfcc9cf7b5799/images/v4/logos/primary-green.svg" >
     </a>
     <h1>Movie Info</h1><br>
+    <input type="button" id="homeButton" value="Home" onclick="gotToHomePage()">
 </div>
 
 <div id="popularResults">
