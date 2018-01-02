@@ -46,6 +46,8 @@
                 myPopular2 = document.createElement("IMG");
                 myPopular2.src = "https://image.tmdb.org/t/p/w500/";
                 myPopular2.src += obj2;
+                myPopular2.style.height = "25%";
+                myPopular2.style.width = "25%";
                 document.getElementById("displayDiv").appendChild(myPopular2);
 
                 //creating a <p> for the overview and appending it into the DIV
