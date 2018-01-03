@@ -27,7 +27,7 @@
 <div class = "TheSearch">
     <form>
         <input type="text" id="search1" name="search" autocomplete="off" placeholder="Start Searching!" onkeydown="enterSearch(event)">
-        <input type="button" id="submit" value="Submit" onclick="f1(3)">
+        <input type="button" id="submit" value="Submit" onclick="movieSearch(3)">
     </form>
 </div><br>
 
@@ -35,17 +35,16 @@
 <div class = "TheSearch">
     <p>See all the recent and most popular movies!</p>
     <input type="button" id="showPopular" value="Show Popular Movies!" onclick="redirectToIndex2()">
-</div>
+</div><br>
 
 <div id="results">
 
 </div>
 
 
-<input type="button" id="showMoreButton" value="Show More Movies!" style = "display:none" onclick="f1(100)">
+<input type="button" id="showMoreButton" value="Show More Movies!" style = "display:none" onclick="movieSearch(100)">
 
 
-<footer></footer>
 
 </body>
 

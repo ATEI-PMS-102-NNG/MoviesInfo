@@ -9,7 +9,7 @@ function enterSearch(e) {
     }
 }
 //jquery Request apo to documentation tou TMDB API
-function f1(x){
+function movieSearch(x){
     document.getElementById("results").innerHTML = ""; //clean previous search
 
     var userInput = document.getElementById("search1").value; //search text
@@ -28,11 +28,21 @@ function f1(x){
 
         console.log(response);
         var i;
-        var obj1, obj2, obj3, id;
+        var obj1, obj2, obj3, obj4, id;
         var myResult1, myResult2, myResult3="";
         var movieWrapper;
+        var obj5 = "Ooops! we couldn't find any movies that matches your search!";
+
+        //checking -> if the users's search doesn't mach any results, show an informative message to the user
+        if(response.total_results = "0"){
+            obj4 = document.createElement("P");
+            obj4.class = "obj4Class";
+            obj4.innerHTML = obj5;
+            document.body.appendChild(obj4);
+        }
 
         for(i=0; i<x; i++) {
+
             //Making a DIV dynamically. In this DIV, the title, poster and overview of a movie is being displayed.
             movieWrapper = document.createElement("DIV");
             movieWrapper.id = "displayDiv";
@@ -62,8 +72,8 @@ function f1(x){
             myResult2 = document.createElement("IMG");
             myResult2.src = "https://image.tmdb.org/t/p/w500/";
             myResult2.src += obj2;
-            myResult2.style.height = "25%";
-            myResult2.style.width = "25%";
+            myResult2.style.height = "20%";
+            myResult2.style.width = "20%";
             document.getElementById("displayDiv").appendChild(myResult2);
 
             //creating a <p> for the overview and appending it into the DIV
@@ -121,8 +131,8 @@ function f2(id){
         myResult2 = document.createElement("IMG");
         myResult2.src = "https://image.tmdb.org/t/p/w500/";
         myResult2.src += obj2;
-        myResult2.style.height = "25%";
-        myResult2.style.width = "25%";
+        myResult2.style.height = "20%";
+        myResult2.style.width = "20%";
         document.getElementById("displayDiv").appendChild(myResult2);
 
         //creating a <p> for the overview and appending it into the DIV
@@ -176,8 +186,8 @@ function popularMovies(){
             myPopular2 = document.createElement("IMG");
             myPopular2.src = "https://image.tmdb.org/t/p/w500/";
             myPopular2.src += obj2;
-            myPopular2.style.height = "25%";
-            myPopular2.style.width = "25%";
+            myPopular2.style.height = "20%";
+            myPopular2.style.width = "20%";
             document.getElementById("displayDiv").appendChild(myPopular2);
 
             //creating a <p> for the overview and appending it into the DIV
