@@ -27,14 +27,14 @@ function movieSearch(x){
     $.ajax(settings).done(function (response) {
 
         console.log(response);
-        var i;
-        var obj1, obj2, obj3, obj4, id;
+        var i, id;
+        var obj1, obj2, obj3, obj4;
         var myResult1, myResult2, myResult3="";
         var movieWrapper;
         var obj5 = "Ooops! we couldn't find any movies that matches your search!";
 
         //checking -> if the users's search doesn't mach any results, show an informative message to the user
-        if(response.total_results == 0){
+        if(response.total_results === 0){
             obj4 = document.createElement("P");
             obj4.class = "obj4Class";
             obj4.innerHTML = obj5;
@@ -152,11 +152,11 @@ function popularMovies(){
         "method": "GET",
         "headers": {},
         "data": "{}"
-    }
+    };
 
     $.ajax(settings).done(function (response) {
         console.log(response);
-        var i;
+        var i, id;
         var obj1, obj2, obj3;
         var myPopular1, myPopular2, myPopular3="";
         var movieWrapper2;
@@ -174,12 +174,18 @@ function popularMovies(){
             movieWrapper2.style.border = "3px solid #73AD21";
             document.getElementById("popularResults").appendChild(movieWrapper2);
 
-            //creating a <p> for the title and appending it into the DIV
+            id = response.results[i].id; //get id from movie
+
+            //creating a <a> for the title and appending it into the DIV
             obj1 = response.results[i].original_title; //getting the original_title from table results that is in the returned Json data
-            myPopular1 = document.createElement("P");
+            myPopular1 = document.createElement("A");
             myPopular1.innerHTML = obj1;
+            myPopular1.href = "show_movie.php?id=" + id; //active link for full overview of movie --> send id of movie to page show_movie
             myPopular1.style.fontSize = "36px";
             document.getElementById("displayDiv").appendChild(myPopular1);
+
+            document.getElementById("displayDiv").innerHTML += "<br>"; //break lines between movie title and image
+            document.getElementById("displayDiv").innerHTML += "<br>";
 
             //creating an <img> for the poster and appending it into the DIV
             obj2 = response.results[i].poster_path; //getting the poster_path from table results that is in the returned Json data
