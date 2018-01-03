@@ -34,7 +34,7 @@ function movieSearch(x){
         var obj5 = "Ooops! we couldn't find any movies that matches your search!";
 
         //checking -> if the users's search doesn't mach any results, show an informative message to the user
-        if(response.total_results = "0"){
+        if(response.total_results == 0){
             obj4 = document.createElement("P");
             obj4.class = "obj4Class";
             obj4.innerHTML = obj5;
