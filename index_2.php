@@ -6,7 +6,9 @@
     <link rel="stylesheet" type="text/css" href="MoviesInfo.css">
     <meta charset="utf-8"/>
     <script src="jquery-3.2.1.js"></script>
-    <script src="movieInfo_Functions.js"></script>
+    <script src="functions/popular_movies.js"></script>
+    <script src="functions/search_functions.js"></script>
+    <script src="functions/redirects.js"></script>
 
 
 </head>

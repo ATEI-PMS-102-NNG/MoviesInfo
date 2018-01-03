@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="MoviesInfo.css">
     <meta charset="utf-8"/>
     <script src="jquery-3.2.1.js"></script>
-    <script src="movieInfo_Functions.js"></script>
+    <script src="functions/search_functions.js"></script>
+    <script src="functions/redirects.js"></script>
     <script type="text/javascript">
     var movie_id;
     movie_id = <?php echo $_GET["id"]; ?>; //get movie id from url
@@ -15,7 +16,7 @@
 </head>
 
 
-<body onload="f2(movie_id)">
+<body onload="showMovieWithID(movie_id)">
 
 <!-- Εδώ βρίσκονται ο τίτλος και το logo που πατώντας το μας πηγαινει στο site τους -->
 <div class = "TheHeader">
