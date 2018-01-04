@@ -90,7 +90,7 @@ function showMovieWithID(id){
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://api.themoviedb.org/3/movie/" + id + "?api_key=b5456db86ace1556b60313e04972fc9f", //query with specific id
+        "url": "https://api.themoviedb.org/3/movie/" + id + "?api_key=b5456db86ace1556b60313e04972fc9f&append_to_response=credits", //query with specific id
         "method": "GET",
         "headers": {},
         "data": "{}"
@@ -100,10 +100,10 @@ function showMovieWithID(id){
     $.ajax(settings).done(function (response) {
 
         console.log(response);
-        var obj1, obj2, obj3, obj4, obj5, obj6;
-        var myResult1, myResult2, myResult3, myResult4, myResult5, myResult6;
-        var movieWrapper
-        var i;
+        var obj1, obj2, obj3, obj4, obj5, obj6, obj7;
+        var myResult1, myResult2, myResult3, myResult4, myResult5, myResult6, myResult7;
+        var movieWrapper;
+        var i, j, genreLabel, actorsLabel;
 
         //Making a DIV dynamically. In this DIV, the title, poster and overview of a movie is being displayed.
         movieWrapper = document.createElement("DIV");
@@ -140,24 +140,43 @@ function showMovieWithID(id){
 
         obj4 = response.release_date;
         myResult4 = document.createElement("P");
-        myResult4.innerHTML = "Release Date: " + obj4; //insert movie title
+        myResult4.innerHTML = "Release Date: " + obj4;
         myResult4.style.fontSize = "20px";
         document.getElementById("displayDiv").appendChild(myResult4);
 
         obj5 = response.popularity;
         myResult5 = document.createElement("P");
-        myResult5.innerHTML = "Popularity: " + obj5; //insert movie title
+        myResult5.innerHTML = "Popularity: " + obj5;
         myResult5.style.fontSize = "20px";
         document.getElementById("displayDiv").appendChild(myResult5);
 
+        genreLabel = document.createElement("P");
+        genreLabel.innerHTML="Genres: ";
+        genreLabel.style.fontSize = "20px";
+        document.getElementById("displayDiv").appendChild(genreLabel);
         for(i=0; i<response.genres.length; i++){
             obj6 = response.genres[i].name;
             myResult6 = document.createElement("P");
-            myResult6.innerHTML = "Genres: " + obj6; //insert movie title
+            myResult6.innerHTML = obj6 + ", ";
             myResult6.style.fontSize = "20px";
             document.getElementById("displayDiv").appendChild(myResult6);
         }
 
+        //changing line
+        var mybr = document.createElement('br');
+        document.getElementById("displayDiv").appendChild(mybr);
+
+        actorsLabel = document.createElement("P");
+        actorsLabel.innerHTML="Actors: ";
+        actorsLabel.style.fontSize = "20px";
+        document.getElementById("displayDiv").appendChild(actorsLabel);
+        for(j=0; j<response.credits.cast.length; j++){
+            obj7 = response.credits.cast[j].name;
+            myResult7 = document.createElement("P");
+            myResult7.innerHTML = obj7 + ", ";
+            myResult7.style.fontSize = "20px";
+            document.getElementById("displayDiv").appendChild(myResult7);
+        }
 
     });
 }
