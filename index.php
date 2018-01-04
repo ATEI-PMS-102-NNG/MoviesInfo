@@ -46,7 +46,7 @@
 
 <input type="button" id="showMoreButton" value="Show More Movies!" style = "display:none" onclick="movieSearch(100)">
 
-
+<p id="noResultsP"></p>
 
 </body>
 
