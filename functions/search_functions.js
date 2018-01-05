@@ -100,10 +100,10 @@ function showMovieWithID(id){
     $.ajax(settings).done(function (response) {
 
         console.log(response);
-        var obj1, obj2, obj3, obj4, obj5, obj6, obj7;
-        var myResult1, myResult2, myResult3, myResult4, myResult5, myResult6, myResult7;
-        var movieWrapper;
-        var i, j, genreLabel, actorsLabel;
+        var obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, objSpan1;
+        var myResult1, myResult2, myResult3, myResult4, myResult5, myResult6, myResult7, myResult8;
+        var movieWrapper, i, j, k, genreLabel, actorsLabel;
+
 
         //Making a DIV dynamically. In this DIV, the title, poster and overview of a movie is being displayed.
         movieWrapper = document.createElement("DIV");
@@ -138,44 +138,59 @@ function showMovieWithID(id){
         myResult3.innerHTML = obj3;
         document.getElementById("displayDiv").appendChild(myResult3);
 
+        //movie release date
         obj4 = response.release_date;
         myResult4 = document.createElement("P");
         myResult4.innerHTML = "Release Date: " + obj4;
         myResult4.style.fontSize = "20px";
         document.getElementById("displayDiv").appendChild(myResult4);
 
+        //movie popularity
         obj5 = response.popularity;
+        k = obj5.toFixed(2); //we let only 2 decimals show from the popularity number
         myResult5 = document.createElement("P");
-        myResult5.innerHTML = "Popularity: " + obj5;
+        myResult5.innerHTML = "Popularity: " + k;
         myResult5.style.fontSize = "20px";
+
         document.getElementById("displayDiv").appendChild(myResult5);
 
+        //movie vote average
+        obj6 = response.vote_average;
+        myResult6 = document.createElement("P");
+        myResult6.innerHTML = "Average Vote: " + obj6;
+        myResult6.style.fontSize = "20px";
+        document.getElementById("displayDiv").appendChild(myResult6);
+
+        //movie Genres
         genreLabel = document.createElement("P");
         genreLabel.innerHTML="Genres: ";
         genreLabel.style.fontSize = "20px";
         document.getElementById("displayDiv").appendChild(genreLabel);
         for(i=0; i<response.genres.length; i++){
-            obj6 = response.genres[i].name;
-            myResult6 = document.createElement("P");
-            myResult6.innerHTML = obj6 + ", ";
-            myResult6.style.fontSize = "20px";
-            document.getElementById("displayDiv").appendChild(myResult6);
+            obj7 = response.genres[i].name;
+            myResult7 = document.createElement("P");
+            myResult7.innerHTML = obj7 + ", ";
+            myResult7.style.fontSize = "20px";
+            myResult7.style.display = "inline";
+            document.getElementById("displayDiv").appendChild(myResult7);
         }
 
         //changing line
         var mybr = document.createElement('br');
         document.getElementById("displayDiv").appendChild(mybr);
 
+        //movie cast-actors
         actorsLabel = document.createElement("P");
         actorsLabel.innerHTML="Actors: ";
         actorsLabel.style.fontSize = "20px";
         document.getElementById("displayDiv").appendChild(actorsLabel);
         for(j=0; j<response.credits.cast.length; j++){
-            obj7 = response.credits.cast[j].name;
-            myResult7 = document.createElement("P");
-            myResult7.innerHTML = obj7 + ", ";
-            myResult7.style.fontSize = "20px";
-            document.getElementById("displayDiv").appendChild(myResult7);
+            obj8 = response.credits.cast[j].name;
+            myResult8 = document.createElement("P");
+            myResult8.innerHTML = obj8 + ", ";
+            myResult8.style.fontSize = "20px";
+            myResult8.style.display = "inline";
+            document.getElementById("displayDiv").appendChild(myResult8);
         }
 
     });

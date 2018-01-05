@@ -10,6 +10,7 @@
       <script src="functions/redirects.js"></script>
       <script src="functions/enter_key.js"></script>
 
+
   </head>
 
 
@@ -35,8 +36,10 @@
 
 <!-- Εδώ βρίσκεται το button για την εμφάνιση των popular movies -->
 <div class = "TheSearch">
-    <p>See all the recent and most popular movies!</p>
-    <input type="button" id="showPopular" value="Show Popular Movies!" onclick="redirectToIndex2()">
+    <p>See all the recent and most popular movies</p>
+    <input type="button" id="showPopular" value="Popular Movies" onclick="redirectToIndex2()">
+    <p>See the movies that are currently playing in theaters</p>
+    <input type="button" id="showCurrent" value="Movies in Theaters" onclick="redirectToIndex3()">
 </div><br>
 
 <div id="results">
