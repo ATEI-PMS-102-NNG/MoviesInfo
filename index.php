@@ -22,35 +22,46 @@
 <!--header for all pages made by bootstrap -->
 <?php include('header_menu.php'); ?>
 
+<div class="container container-body">
+    <h1 class="title text-center text-success">Movies Info</h1>
 
-    <h1 class="title text-center">Movies Info</h1>
+    <p class="text-center font-size20"><i>Learn all about your favourite movies!</i></p><br>
 
-    <p>Learn all about your favourite movies!</p><br>
-
-    <!-- Εδώ βρίσκεται το search box και το button για την εκκίνηση αναζήτησης -->
+    <!-- Search box and button that searching movies -->
     <div class = "TheSearch">
-        <form>
+        <form style="text-align: center">
             <input type="text" id="search1" name="search" autocomplete="off" placeholder="Start Searching!" onkeydown="enterSearch(event)">
-            <input type="button" id="submit" value="Submit" onclick="movieSearch(3)">
+            <br>
+            <button id="submit" type="button" class="btn btn-success btn-lg" onclick="movieSearch(3)">Search</button> <!--large button using bootstrap graphics-->
         </form>
     </div><br>
 
-    <!-- Εδώ βρίσκεται το button για την εμφάνιση των popular movies -->
+    <!-- Buttons for popular movies and now playing movies -->
     <div class = "TheSearch">
-        <p>See all the recent and most popular movies</p>
-        <input type="button" id="showPopular" value="Popular Movies" onclick="redirectToIndex2()">
-        <p>See the movies that are currently playing in theaters</p>
-        <input type="button" id="showCurrent" value="Movies in Theaters" onclick="redirectToIndex3()">
+        <div class="row">
+            <!-- separate into 2 columns -->
+            <div class="col-md-6">
+                <h6 class="text-danger">See all the recent and most popular movies</h6>
+                <button id="showPopular" type="button" class="btn btn-success" onclick="redirectToIndex2()">Popular Movies</button> <!--medium button using bootstrap graphics-->
+            </div>
+            <div class="col-md-6">
+                <h6 class="text-danger">See the movies that are currently playing in theaters</h6>
+                <button id="showCurrent" type="button" class="btn btn-success" onclick="redirectToIndex3()">Movies in Theaters</button> <!--medium button using bootstrap graphics-->
+            </div>
+        </div>
+
+
     </div><br>
 
     <div id="results">
 
     </div>
-
-
-    <input type="button" id="showMoreButton" value="Show More Movies!" style = "display:none" onclick="movieSearch(100)">
-
+    <div style="text-align: center">
+        <!--medium button for more movies - using bootstrap graphics-->
+        <button id="showMoreButton" type="button" class="btn btn-success" style = "display:none" onclick="movieSearch(100)">Show More Movies!</button>
+    </div>
     <p id="noResultsP"></p>
+</div>
 </body>
 
 </html>
