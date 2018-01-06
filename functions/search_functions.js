@@ -23,6 +23,7 @@ function movieSearch(x){
         var myResult1, myResult2, myResult3="";
         var movieWrapper;
         var obj5 = "Ooops! we couldn't find any movies that match your search!";
+        var array_length, loops;
 
         //checking -> if the users's search doesn't mach any results, show an informative message to the user
         if(response.total_results === 0){
@@ -30,9 +31,25 @@ function movieSearch(x){
             $("#showMoreButton").hide();
         }
         else{
-            for(i=0; i<x; i++) {
+            //check the number of results, show more button, declare loops
+            array_length = response.results.length;
+            if (x === 3 && array_length <= 3){
+                loops = array_length;
+            }
+            else if (x === 3 && array_length > 3){
+                loops = 3;
+                $("#showMoreButton").show();
+            }
+            else if (x === 3 && array_length === 3){
+                loops = 3;
+            }
+            else{
+                loops = array_length;
+                $("#showMoreButton").hide();
+            }
+            for(i=0; i<loops; i++) {
 
-                $("#noResultsP").empty(); //there is a movie tha match the user's input, so make this message empty
+                $("#noResultsP").empty(); //there is a movie that match the user's input, so make this message empty
 
                 //Making a DIV dynamically. In this DIV, the title, poster and overview of a movie is being displayed.
                 movieWrapper = document.createElement("DIV");
@@ -73,8 +90,6 @@ function movieSearch(x){
                 myResult3.innerHTML = obj3;
                 document.getElementById("displayDiv").appendChild(myResult3);
             }
-
-            $("#showMoreButton").show();
         }
 
 
@@ -100,7 +115,7 @@ function showMovieWithID(id){
     $.ajax(settings).done(function (response) {
 
         console.log(response);
-        var obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, objSpan1;
+        var obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8;
         var myResult1, myResult2, myResult3, myResult4, myResult5, myResult6, myResult7, myResult8;
         var movieWrapper, i, j, k, genreLabel, actorsLabel;
 

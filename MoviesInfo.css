@@ -1,13 +1,14 @@
-#page{
+/*#page{
     width:600px;
     margin:150px auto 0;
 
 }
+*/
 
 /* Μορφοποιήσεις για τα search box και το button του */
 input[type=text], select {
-    width: 80%;
-    padding: 12px 20px;
+    width: 100%;
+    padding: 10px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -16,7 +17,7 @@ input[type=text], select {
 }
 
 
-#submit {
+/*#submit {
     width: 15%;
     background-color: #4CAF50;
     color: white;
@@ -26,6 +27,7 @@ input[type=text], select {
     border-radius: 4px;
     cursor: pointer;
 }
+*/
 
 input[type=button]:hover {
     background-color: green;
@@ -46,23 +48,21 @@ img{
 }
 
 div.TheSearch {
+    text-align: center;
     border-radius: 5px;
-    background-color: #f2f2f2;
     margin: auto;
-    width: 50%;
+    /*width: 50%;
     height: 50%;
+    background-color: #f2f2f2;
+    */
     border: 3px solid #73AD21;
     padding: 10px;
 }
 
-/*div.TheHeader{
-    background-color: #003366;
-}
-*/
 p{
     text-align: center;
-    font-size: 150%;
 }
+
 
 
 div.display{
@@ -109,7 +109,7 @@ div.more{
     padding: 10px;
 
 }
-
+/*
 #showPopular{
     width: 20%;
     background-color: #4CAF50;
@@ -159,7 +159,7 @@ div.more{
     top: 5%;
     right: 85%;
 }
-
+*/
 footer{
     background-color: #003366;
 
