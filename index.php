@@ -25,7 +25,7 @@
 <div class="container container-body">
     <h1 class="title text-center text-success">Movies Info</h1>
 
-    <p class="text-center font-size20"><i>Learn all about your favourite movies!</i></p><br>
+    <p class="text-center font-size20"><em>Learn all about your favourite movies!</em></p><br>
 
     <!-- Search box and button that searching movies -->
     <div class = "TheSearch">
