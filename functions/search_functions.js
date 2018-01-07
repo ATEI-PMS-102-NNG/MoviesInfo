@@ -69,7 +69,7 @@ function movieSearch(x){
                 myResult1 = document.createElement("A");
                 myResult1.innerHTML = obj1; //insert movie title
                 myResult1.href = "show_movie.php?id=" + id; //active link for full overview of movie --> send id of movie to page show_movie
-                myResult1.style.fontSize = "36px";
+                myResult1.style.fontSize = "200%";
                 document.getElementById("displayDiv").appendChild(myResult1);
 
                 document.getElementById("displayDiv").innerHTML += "<br>"; //break lines between movie title and image
@@ -87,6 +87,7 @@ function movieSearch(x){
                 //creating a <p> for the overview and appending it into the DIV
                 obj3 = response.results[i].overview; //getting the overview from table results that is in the returned Json data
                 myResult3 = document.createElement("P");
+                myResult3.style.fontSize = "115%";
                 myResult3.innerHTML = obj3;
                 document.getElementById("displayDiv").appendChild(myResult3);
             }
@@ -135,7 +136,7 @@ function showMovieWithID(id){
         obj1 = response.original_title; //getting the original_title in the returned Json data
         myResult1 = document.createElement("P");
         myResult1.innerHTML = obj1; //insert movie title
-        myResult1.style.fontSize = "36px";
+        myResult1.style.fontSize = "200%";
         document.getElementById("displayDiv").appendChild(myResult1);
 
         //creating an <img> for the poster and appending it into the DIV
@@ -150,6 +151,7 @@ function showMovieWithID(id){
         //creating a <p> for the overview and appending it into the DIV
         obj3 = response.overview; //getting the overview in the returned Json data
         myResult3 = document.createElement("P");
+        myResult3.style.fontSize = "115%";
         myResult3.innerHTML = obj3;
         document.getElementById("displayDiv").appendChild(myResult3);
 
@@ -157,7 +159,7 @@ function showMovieWithID(id){
         obj4 = response.release_date;
         myResult4 = document.createElement("P");
         myResult4.innerHTML = "Release Date: " + obj4;
-        myResult4.style.fontSize = "20px";
+        myResult4.style.fontSize = "125%";
         document.getElementById("displayDiv").appendChild(myResult4);
 
         //movie popularity
@@ -165,7 +167,7 @@ function showMovieWithID(id){
         k = obj5.toFixed(2); //we let only 2 decimals show from the popularity number
         myResult5 = document.createElement("P");
         myResult5.innerHTML = "Popularity: " + k;
-        myResult5.style.fontSize = "20px";
+        myResult5.style.fontSize = "125%";
 
         document.getElementById("displayDiv").appendChild(myResult5);
 
@@ -173,19 +175,19 @@ function showMovieWithID(id){
         obj6 = response.vote_average;
         myResult6 = document.createElement("P");
         myResult6.innerHTML = "Average Vote: " + obj6;
-        myResult6.style.fontSize = "20px";
+        myResult6.style.fontSize = "125%";
         document.getElementById("displayDiv").appendChild(myResult6);
 
         //movie Genres
         genreLabel = document.createElement("P");
         genreLabel.innerHTML="Genres: ";
-        genreLabel.style.fontSize = "20px";
+        genreLabel.style.fontSize = "125%";
         document.getElementById("displayDiv").appendChild(genreLabel);
         for(i=0; i<response.genres.length; i++){
             obj7 = response.genres[i].name;
             myResult7 = document.createElement("P");
             myResult7.innerHTML = obj7 + ", ";
-            myResult7.style.fontSize = "20px";
+            myResult7.style.fontSize = "100%";
             myResult7.style.display = "inline";
             document.getElementById("displayDiv").appendChild(myResult7);
         }
@@ -197,13 +199,13 @@ function showMovieWithID(id){
         //movie cast-actors
         actorsLabel = document.createElement("P");
         actorsLabel.innerHTML="Actors: ";
-        actorsLabel.style.fontSize = "20px";
+        actorsLabel.style.fontSize = "120%";
         document.getElementById("displayDiv").appendChild(actorsLabel);
         for(j=0; j<response.credits.cast.length; j++){
             obj8 = response.credits.cast[j].name;
             myResult8 = document.createElement("P");
             myResult8.innerHTML = obj8 + ", ";
-            myResult8.style.fontSize = "20px";
+            myResult8.style.fontSize = "100%";
             myResult8.style.display = "inline";
             document.getElementById("displayDiv").appendChild(myResult8);
         }
