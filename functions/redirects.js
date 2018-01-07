@@ -5,7 +5,3 @@ function redirectToIndex2(){
 function redirectToIndex3(){
     window.location = "./index_3.php";
 }
-
-function gotToHomePage(){
-    window.location = "./index.php";
-}
