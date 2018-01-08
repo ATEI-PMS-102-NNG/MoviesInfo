@@ -1,102 +1,108 @@
 
 //jquery Request apo to documentation tou TMDB API
-function movieSearch(x){
+function movieSearch(x) {
     document.getElementById("results").innerHTML = ""; //clean previous search
 
     var userInput = document.getElementById("search1").value; //search text
+    var obj5 = "Ooops! we couldn't find any movies that match your search!";
     //build ajax settings
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://api.themoviedb.org/3/search/movie?api_key=b5456db86ace1556b60313e04972fc9f&query="+userInput, //query + search text
+        "url": "https://api.themoviedb.org/3/search/movie?api_key=b5456db86ace1556b60313e04972fc9f&query=" + userInput, //query + search text
         "method": "GET",
         "headers": {},
         "data": "{}"
     };
+    //check if user input is empty and show message
+    if (userInput === "") {
+        document.getElementById("noResultsP").innerHTML = obj5;
+        $("#showMoreButton").hide();
+    }
+    else {
 
 
-    $.ajax(settings).done(function (response) {
+        $.ajax(settings).done(function (response) {
 
-        console.log(response);
-        var i, id;
-        var obj1, obj2, obj3;
-        var myResult1, myResult2, myResult3="";
-        var movieWrapper;
-        var obj5 = "Ooops! we couldn't find any movies that match your search!";
-        var array_length, loops;
+            console.log(response);
+            var i, id;
+            var obj1, obj2, obj3;
+            var myResult1, myResult2, myResult3 = "";
+            var movieWrapper;
+            var array_length, loops;
 
-        //checking -> if the users's search doesn't mach any results, show an informative message to the user
-        if(response.total_results === 0){
-            document.getElementById("noResultsP").innerHTML = obj5;
-            $("#showMoreButton").hide();
-        }
-        else{
-            //check the number of results, show more button, declare loops
-            array_length = response.results.length;
-            if (x === 3 && array_length <= 3){
-                loops = array_length;
-            }
-            else if (x === 3 && array_length > 3){
-                loops = 3;
-                $("#showMoreButton").show();
-            }
-            else if (x === 3 && array_length === 3){
-                loops = 3;
-            }
-            else{
-                loops = array_length;
+            //checking -> if the users's search doesn't mach any results, show an informative message to the user
+            if (response.total_results === 0) {
+                document.getElementById("noResultsP").innerHTML = obj5;
                 $("#showMoreButton").hide();
             }
-            for(i=0; i<loops; i++) {
+            else {
+                //check the number of results, show more button, declare loops
+                array_length = response.results.length;
+                if (x === 3 && array_length <= 3) {
+                    loops = array_length;
+                }
+                else if (x === 3 && array_length > 3) {
+                    loops = 3;
+                    $("#showMoreButton").show();
+                }
+                else if (x === 3 && array_length === 3) {
+                    loops = 3;
+                }
+                else {
+                    loops = array_length;
+                    $("#showMoreButton").hide();
+                }
+                for (i = 0; i < loops; i++) {
 
-                $("#noResultsP").empty(); //there is a movie that match the user's input, so make this message empty
+                    $("#noResultsP").empty(); //there is a movie that match the user's input, so make this message empty
 
-                //Making a DIV dynamically. In this DIV, the title, poster and overview of a movie is being displayed.
-                movieWrapper = document.createElement("DIV");
-                movieWrapper.id = "displayDiv";
-                movieWrapper.style.textAlign = "center";
-                movieWrapper.style.fontSize = "100%";
-                movieWrapper.style.backgroundColor = "#f2f2f2";
-                movieWrapper.style.margin = "auto";
-                movieWrapper.style.width = "70%";
-                movieWrapper.style.border = "3px solid #73AD21";
-                document.getElementById("results").appendChild(movieWrapper);
+                    //Making a DIV dynamically. In this DIV, the title, poster and overview of a movie is being displayed.
+                    movieWrapper = document.createElement("DIV");
+                    movieWrapper.id = "displayDiv";
+                    movieWrapper.style.textAlign = "center";
+                    movieWrapper.style.fontSize = "100%";
+                    movieWrapper.style.backgroundColor = "#f2f2f2";
+                    movieWrapper.style.margin = "auto";
+                    movieWrapper.style.width = "70%";
+                    movieWrapper.style.border = "3px solid #73AD21";
+                    document.getElementById("results").appendChild(movieWrapper);
 
-                id = response.results[i].id; //get id from movie
+                    id = response.results[i].id; //get id from movie
 
-                //creating an <a> for the title and appending it into the DIV
-                obj1 = response.results[i].original_title; //getting the original_title from table results that is in the returned Json data
-                myResult1 = document.createElement("A");
-                myResult1.innerHTML = obj1; //insert movie title
-                myResult1.href = "show_movie.php?id=" + id; //active link for full overview of movie --> send id of movie to page show_movie
-                myResult1.style.fontSize = "200%";
-                document.getElementById("displayDiv").appendChild(myResult1);
+                    //creating an <a> for the title and appending it into the DIV
+                    obj1 = response.results[i].original_title; //getting the original_title from table results that is in the returned Json data
+                    myResult1 = document.createElement("A");
+                    myResult1.innerHTML = obj1; //insert movie title
+                    myResult1.href = "show_movie.php?id=" + id; //active link for full overview of movie --> send id of movie to page show_movie
+                    myResult1.style.fontSize = "200%";
+                    document.getElementById("displayDiv").appendChild(myResult1);
 
-                document.getElementById("displayDiv").innerHTML += "<br>"; //break lines between movie title and image
-                document.getElementById("displayDiv").innerHTML += "<br>";
+                    document.getElementById("displayDiv").innerHTML += "<br>"; //break lines between movie title and image
+                    document.getElementById("displayDiv").innerHTML += "<br>";
 
-                //creating an <img> for the poster and appending it into the DIV
-                obj2 = response.results[i].poster_path; //getting the poster_path from table results that is in the returned Json data
-                myResult2 = document.createElement("IMG");
-                myResult2.src = "https://image.tmdb.org/t/p/w500/";
-                myResult2.src += obj2;
-                myResult2.style.height = "20%";
-                myResult2.style.width = "20%";
-                document.getElementById("displayDiv").appendChild(myResult2);
+                    //creating an <img> for the poster and appending it into the DIV
+                    obj2 = response.results[i].poster_path; //getting the poster_path from table results that is in the returned Json data
+                    myResult2 = document.createElement("IMG");
+                    myResult2.src = "https://image.tmdb.org/t/p/w500/";
+                    myResult2.src += obj2;
+                    myResult2.style.height = "20%";
+                    myResult2.style.width = "20%";
+                    document.getElementById("displayDiv").appendChild(myResult2);
 
-                //creating a <p> for the overview and appending it into the DIV
-                obj3 = response.results[i].overview; //getting the overview from table results that is in the returned Json data
-                myResult3 = document.createElement("P");
-                myResult3.style.fontSize = "115%";
-                myResult3.innerHTML = obj3;
-                document.getElementById("displayDiv").appendChild(myResult3);
+                    //creating a <p> for the overview and appending it into the DIV
+                    obj3 = response.results[i].overview; //getting the overview from table results that is in the returned Json data
+                    myResult3 = document.createElement("P");
+                    myResult3.style.fontSize = "115%";
+                    myResult3.innerHTML = obj3;
+                    document.getElementById("displayDiv").appendChild(myResult3);
+                }
             }
-        }
 
 
-
-        //document.getElementById("showMoreButton").style.display = "block";
-    });
+            //document.getElementById("showMoreButton").style.display = "block";
+        });
+    }
 }
 
 function showMovieWithID(id){
