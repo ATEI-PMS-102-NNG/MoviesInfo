@@ -3,16 +3,8 @@ function enterSearch(e) {
     var code = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0; //for all browsers
     if(code===13){
         e.preventDefault(); //not refresh the page
-        document.getElementById('submit').click(); //search using ajax below
+        document.getElementById('submit').click(); //enter at searchMovie(x)
 
         $("#showMoreButton").hide(); //hide the show more movies button
-        $("#noResultsP").empty(); //there user pressed enter in blank search, so make this message empty
-        //check for empty user input
-        var userInput = document.getElementById("search1").value; //search text
-        var empty_search = "Ooops! we couldn't find any movies that match your search!";
-        if(userInput === ""){
-            document.getElementById("noResultsP").innerHTML = empty_search;
-            $("#showMoreButton").hide();
-        }
     }
 }

@@ -4,7 +4,7 @@ function movieSearch(x) {
     document.getElementById("results").innerHTML = ""; //clean previous search
 
     var userInput = document.getElementById("search1").value; //search text
-    var obj5 = "Ooops! we couldn't find any movies that match your search!";
+    var empty_search = "Ooops! You didn't insert a movie at search box!";
     //build ajax settings
     var settings = {
         "async": true,
@@ -16,7 +16,7 @@ function movieSearch(x) {
     };
     //check if user input is empty and show message
     if (userInput === "") {
-        document.getElementById("noResultsP").innerHTML = obj5;
+        document.getElementById("noResultsP").innerHTML = empty_search;
         $("#showMoreButton").hide();
     }
     else {
@@ -30,6 +30,7 @@ function movieSearch(x) {
             var myResult1, myResult2, myResult3 = "";
             var movieWrapper;
             var array_length, loops;
+            var obj5 = "Ooops! we couldn't find any movies that match your search!";
 
             //checking -> if the users's search doesn't mach any results, show an informative message to the user
             if (response.total_results === 0) {
