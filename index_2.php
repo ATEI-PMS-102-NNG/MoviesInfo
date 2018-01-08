@@ -24,12 +24,13 @@
 <!--header for all pages made by bootstrap -->
 <?php include('header_menu.php'); ?>
 
-<h1 class="title text-center">Movies Info</h1>
+<div class="container container-body">
+    <h1 class="title text-center text-success">Movies Info</h1>
+    <h3 class="text-center text-info"><em>Popular Movies</em></h3>
 
-<div id="popularResults">
-
+    <div id="popularResults">
+    </div>
 </div>
-
 <footer></footer>
 
 </body>

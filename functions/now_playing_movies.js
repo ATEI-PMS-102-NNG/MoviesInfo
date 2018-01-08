@@ -36,7 +36,7 @@ function nowPlayingMovies() {
             myPopular1 = document.createElement("A");
             myPopular1.innerHTML = obj1;
             myPopular1.href = "show_movie.php?id=" + id; //active link for full overview of movie --> send id of movie to page show_movie
-            myPopular1.style.fontSize = "36px";
+            myPopular1.style.fontSize = "200%";
             document.getElementById("displayDiv").appendChild(myPopular1);
 
             document.getElementById("displayDiv").innerHTML += "<br>"; //break lines between movie title and image
@@ -54,6 +54,7 @@ function nowPlayingMovies() {
             //creating a <p> for the overview and appending it into the DIV
             obj3 = response.results[i].overview; //getting the overview from table results that is in the returned Json data
             myPopular3 = document.createElement("P");
+            myPopular3.style.fontSize = "115%";
             myPopular3.innerHTML = obj3;
             document.getElementById("displayDiv").appendChild(myPopular3);
         }

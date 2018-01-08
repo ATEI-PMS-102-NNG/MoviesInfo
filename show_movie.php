@@ -25,16 +25,12 @@
 <!--header for all pages made by bootstrap -->
 <?php include('header_menu.php'); ?>
 
-<h1 class="title text-center">Movies Info</h1>
+<div class="container container-body">
+    <h1 class="title text-center text-success">Movies Info</h1>
 
-<div id="movieShow"></div>
+    <div id="movieShow"></div>
 
-<script type="text/javascript">
-
-
-
-</script>
-
+</div>
 <footer></footer>
 
 </body>
