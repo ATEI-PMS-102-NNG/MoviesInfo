@@ -21,6 +21,9 @@ function movieSearch(x) {
     }
     else {
 
+        $('html,body').animate({
+                scrollTop: $("#"+"results").offset().top},
+            'slow');
 
         $.ajax(settings).done(function (response) {
 
@@ -135,7 +138,7 @@ function showMovieWithID(id){
         movieWrapper.style.fontSize = "100%";
         movieWrapper.style.backgroundColor = "#f2f2f2";
         movieWrapper.style.margin = "auto";
-        movieWrapper.style.width = "70%";
+        movieWrapper.style.width = "100%";
         movieWrapper.style.border = "3px solid #73AD21";
         document.getElementById("movieShow").appendChild(movieWrapper);
 
@@ -144,6 +147,7 @@ function showMovieWithID(id){
         myResult1 = document.createElement("P");
         myResult1.innerHTML = obj1; //insert movie title
         myResult1.style.fontSize = "200%";
+        myResult1.style.fontWeight = "bold";
         document.getElementById("displayDiv").appendChild(myResult1);
 
         //creating an <img> for the poster and appending it into the DIV
@@ -159,6 +163,7 @@ function showMovieWithID(id){
         obj3 = response.overview; //getting the overview in the returned Json data
         myResult3 = document.createElement("P");
         myResult3.style.fontSize = "115%";
+        myResult3.style.color = "#464e64";
         myResult3.innerHTML = obj3;
         document.getElementById("displayDiv").appendChild(myResult3);
 
@@ -167,6 +172,7 @@ function showMovieWithID(id){
         myResult4 = document.createElement("P");
         myResult4.innerHTML = "Release Date: " + obj4;
         myResult4.style.fontSize = "125%";
+        myResult4.style.color = "#643b31";
         document.getElementById("displayDiv").appendChild(myResult4);
 
         //movie popularity
@@ -175,7 +181,7 @@ function showMovieWithID(id){
         myResult5 = document.createElement("P");
         myResult5.innerHTML = "Popularity: " + k;
         myResult5.style.fontSize = "125%";
-
+        myResult5.style.color = "#729281";
         document.getElementById("displayDiv").appendChild(myResult5);
 
         //movie vote average
@@ -183,19 +189,26 @@ function showMovieWithID(id){
         myResult6 = document.createElement("P");
         myResult6.innerHTML = "Average Vote: " + obj6;
         myResult6.style.fontSize = "125%";
+        myResult6.style.color = "#49b441";
         document.getElementById("displayDiv").appendChild(myResult6);
 
         //movie Genres
-        genreLabel = document.createElement("P");
+        genreLabel = document.createElement("DIV");
         genreLabel.innerHTML="Genres: ";
         genreLabel.style.fontSize = "125%";
+        genreLabel.style.color = "#576bb4";
         document.getElementById("displayDiv").appendChild(genreLabel);
         for(i=0; i<response.genres.length; i++){
             obj7 = response.genres[i].name;
             myResult7 = document.createElement("P");
-            myResult7.innerHTML = obj7 + ", ";
+            myResult7.innerHTML = obj7;
+            //insert comma but not at last word
+            if(i<response.genres.length-1){
+                myResult7.innerHTML = obj7 + ", ";
+            }
             myResult7.style.fontSize = "100%";
             myResult7.style.display = "inline";
+            myResult7.style.color = "#576bb4";
             document.getElementById("displayDiv").appendChild(myResult7);
         }
 
@@ -207,13 +220,19 @@ function showMovieWithID(id){
         actorsLabel = document.createElement("P");
         actorsLabel.innerHTML="Actors: ";
         actorsLabel.style.fontSize = "120%";
+        actorsLabel.style.color = "#5e5e5e";
         document.getElementById("displayDiv").appendChild(actorsLabel);
         for(j=0; j<response.credits.cast.length; j++){
             obj8 = response.credits.cast[j].name;
             myResult8 = document.createElement("P");
-            myResult8.innerHTML = obj8 + ", ";
+            myResult8.innerHTML = obj8;
+            //insert comma but not at last word
+            if(j<response.credits.cast.length-1){
+                myResult8.innerHTML = obj8 + ", ";
+            }
             myResult8.style.fontSize = "100%";
             myResult8.style.display = "inline";
+            myResult8.style.color = "#5e5e5e";
             document.getElementById("displayDiv").appendChild(myResult8);
         }
 
